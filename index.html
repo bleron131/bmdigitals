@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bleron Mustafa – Webseiten &amp; Mediamatik</title>
+  <meta name="description" content="Bleron Mustafa, Mediamatiker EFZ in Ausbildung. Moderne, schnelle Webseiten – coded oder mit WordPress/Wix. Jetzt online zusammenstellen und bestellen.">
+  <meta name="theme-color" content="#0c0d10">
+
+  <!-- Schriften -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Zur Startseite">
+        <span class="logo__mark" aria-hidden="true">BM</span>
+        <span class="logo__text" data-text="name"></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a href="#about">Über mich</a></li>
+          <li><a href="#projects">Projekte</a></li>
+          <li><a href="#configurator">Seite bestellen</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="cart-btn" id="cartBtn" type="button" aria-haspopup="dialog" aria-controls="cart">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12L6 6Zm0 0L5 3H2M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="visually-hidden">Warenkorb, </span>
+          <span class="cart-btn__count" id="cartCount" aria-live="polite">0</span>
+          <span class="visually-hidden"> Artikel</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">
+          <span class="menu-btn__bar" aria-hidden="true"></span>
+          <span class="visually-hidden">Menü öffnen</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow reveal" data-text="heroEyebrow"></p>
+        <h1 class="hero__title reveal" id="heroTitle" data-text="name"></h1>
+        <p class="hero__lead reveal" data-text="heroText"></p>
+        <div class="hero__cta reveal">
+          <a class="btn btn--primary" href="#configurator">Seite bestellen</a>
+          <a class="btn btn--ghost" href="#projects">Projekte ansehen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Über mich ===== -->
+    <section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="container about">
+        <div class="about__photo reveal" id="aboutPhoto"></div>
+        <div class="about__content">
+          <p class="eyebrow reveal">Über mich</p>
+          <h2 class="section__title reveal" id="aboutTitle" data-text="aboutTitle"></h2>
+          <div class="about__text reveal" id="aboutText"></div>
+          <h3 class="about__subtitle reveal">Skills &amp; Tools</h3>
+          <ul class="skills reveal" id="skills"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projekte ===== -->
+    <section class="section section--alt" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <p class="eyebrow reveal">Referenzen</p>
+        <h2 class="section__title reveal" id="projectsTitle">Ausgewählte Projekte</h2>
+        <div class="projects" id="projectList"></div>
+      </div>
+    </section>
+
+    <!-- ===== Konfigurator ===== -->
+    <section class="section" id="configurator" aria-labelledby="configTitle">
+      <div class="container">
+        <p class="eyebrow reveal">Konfigurator</p>
+        <h2 class="section__title reveal" id="configTitle">Deine Seite zusammenstellen</h2>
+        <p class="section__lead reveal" data-text="configLead"></p>
+
+        <ol class="steps reveal" id="steps"></ol>
+
+        <form class="config reveal" id="configForm" novalidate>
+          <div class="config__main">
+            <!-- Schritt 1: Art der Umsetzung -->
+            <fieldset class="config__group">
+              <legend class="config__legend"><span class="config__num">1</span> Art der Umsetzung</legend>
+              <div class="type-switch" id="typeSwitch"></div>
+            </fieldset>
+
+            <!-- Schritt 2: Basis -->
+            <fieldset class="config__group">
+              <legend class="config__legend"><span class="config__num">2</span> Basis</legend>
+              <div class="option option--base" id="baseOption"></div>
+            </fieldset>
+
+            <!-- Schritt 3: Extras -->
+            <fieldset class="config__group">
+              <legend class="config__legend"><span class="config__num">3</span> Extras hinzufügen</legend>
+              <div class="options" id="extrasList"></div>
+            </fieldset>
+          </div>
+
+          <!-- Zusammenfassung -->
+          <aside class="summary" aria-labelledby="summaryTitle">
+            <h3 class="summary__title" id="summaryTitle">Deine Auswahl</h3>
+            <ul class="summary__list" id="summaryList"></ul>
+            <div class="summary__total">
+              <span>Gesamtpreis</span>
+              <strong id="configTotal" aria-live="polite">–</strong>
+            </div>
+            <p class="summary__note" data-text="priceNote"></p>
+            <button class="btn btn--primary btn--block" type="submit" id="addToCartBtn">In den Warenkorb</button>
+            <button class="btn btn--ghost btn--block" type="button" id="cancelEditBtn" hidden>Bearbeiten abbrechen</button>
+            <p class="summary__feedback" id="configFeedback" role="status"></p>
+          </aside>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Kontakt ===== -->
+    <section class="section section--alt" id="contact" aria-labelledby="contactTitle">
+      <div class="container contact">
+        <p class="eyebrow reveal">Kontakt</p>
+        <h2 class="section__title reveal" id="contactTitle">Lass uns sprechen</h2>
+        <p class="section__lead reveal" data-text="contactText"></p>
+        <ul class="contact__list reveal" id="contactList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> <span data-text="name"></span> · <span data-text="location"></span></p>
+      <a href="#top">Nach oben ↑</a>
+    </div>
+  </footer>
+
+  <!-- ===== Warenkorb (Seitenleiste) ===== -->
+  <dialog class="drawer" id="cart" aria-labelledby="cartTitle">
+    <div class="drawer__inner">
+      <div class="drawer__head">
+        <h2 class="drawer__title" id="cartTitle">Warenkorb</h2>
+        <button class="icon-btn" type="button" id="cartClose" aria-label="Warenkorb schliessen">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <!-- Ansicht 1: Artikel -->
+      <div class="drawer__view" id="cartView">
+        <ul class="cart-list" id="cartList"></ul>
+        <div class="cart-empty" id="cartEmpty">
+          <p>Dein Warenkorb ist noch leer.</p>
+          <a class="btn btn--ghost" href="#configurator" data-close-cart>Zum Konfigurator</a>
+        </div>
+        <div class="drawer__foot" id="cartFoot">
+          <div class="summary__total">
+            <span>Total</span>
+            <strong id="cartTotal">–</strong>
+          </div>
+          <p class="summary__note" data-text="priceNote"></p>
+          <button class="btn btn--primary btn--block" type="button" id="checkoutBtn">Bestellen</button>
+        </div>
+      </div>
+
+      <!-- Ansicht 2: Bestellformular -->
+      <div class="drawer__view" id="orderView" hidden>
+        <button class="link-btn" type="button" id="backToCart">← Zurück zum Warenkorb</button>
+        <form class="order-form" id="orderForm" novalidate>
+          <p class="order-form__info">Felder mit <span aria-hidden="true">*</span><span class="visually-hidden">Stern</span> sind Pflicht.</p>
+
+          <div class="field">
+            <label for="fName">Name <span aria-hidden="true">*</span></label>
+            <input id="fName" name="name" type="text" autocomplete="name" required aria-describedby="fNameErr">
+            <p class="field__error" id="fNameErr"></p>
+          </div>
+          <div class="field">
+            <label for="fEmail">E-Mail <span aria-hidden="true">*</span></label>
+            <input id="fEmail" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="fEmailErr">
+            <p class="field__error" id="fEmailErr"></p>
+          </div>
+          <div class="field">
+            <label for="fPhone">Telefon <span class="field__opt">(optional)</span></label>
+            <input id="fPhone" name="telefon" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="fPhoneErr">
+            <p class="field__error" id="fPhoneErr"></p>
+          </div>
+          <div class="field">
+            <label for="fMessage">Nachricht / Wünsche <span class="field__opt">(optional)</span></label>
+            <textarea id="fMessage" name="nachricht" rows="4" placeholder="Was ist dir wichtig? Farben, Beispiele, Termin …"></textarea>
+          </div>
+          <!-- Spam-Schutz für Formspree (für Menschen unsichtbar) -->
+          <input class="visually-hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="summary__total">
+            <span>Total</span>
+            <strong id="orderTotal">–</strong>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit" id="sendBtn">Bestellung absenden</button>
+          <p class="form-status" id="orderStatus" role="alert"></p>
+        </form>
+      </div>
+
+      <!-- Ansicht 3: Danke -->
+      <div class="drawer__view thanks" id="thanksView" hidden tabindex="-1">
+        <div class="thanks__icon" aria-hidden="true">✓</div>
+        <h3>Vielen Dank!</h3>
+        <p data-text="thanksText"></p>
+        <p class="thanks__demo" id="thanksDemo" hidden>Hinweis: Demo-Modus – es wurde keine E-Mail gesendet, weil die Formspree-ID noch fehlt.</p>
+        <button class="btn btn--ghost" type="button" data-close-cart>Schliessen</button>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript><p class="noscript">Bitte aktiviere JavaScript, damit Konfigurator und Warenkorb funktionieren.</p></noscript>
+</body>
+</html>
