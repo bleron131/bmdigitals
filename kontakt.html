@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt – Bleron Mustafa</title>
+  <meta name="description" content="Schreib Bleron Mustafa – Fragen, Ideen oder einfach Hallo sagen. Antwort innert 48 Stunden.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Schrift: Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html" aria-label="Bleron Mustafa – zur Startseite">
+        <span class="brand__mark" aria-hidden="true">B</span>
+        <span class="brand__name">Bleron Mustafa <small>Webdesign · Schweiz</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a href="index.html">Start <small>Willkommen</small></a></li>
+          <li><a href="ueber-mich.html">Über mich <small>Wer ich bin</small></a></li>
+          <li><a href="projekte.html">Projekte <small>Referenzen</small></a></li>
+          <li><a href="angebot.html">Angebot &amp; Preise <small>Seite bestellen</small></a></li>
+          <li><a href="kontakt.html" aria-current="page">Kontakt <small>Schreib mir</small></a></li>
+        </ul>
+        <p class="nav__foot"><span data-config="email"></span><br>Antwort innert 48 Stunden</p>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="cartBtn" type="button" aria-haspopup="dialog">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a1 1 0 0 1-1 .9H7.2a1 1 0 0 1-1-.9L5 8Zm4 0V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="visually-hidden">Warenkorb öffnen, </span>
+          <span class="cart-count is-empty" id="cartCount">0</span>
+          <span class="visually-hidden"> Pakete</span>
+        </button>
+        <a class="btn btn--plain header-cta" href="angebot.html">Seite anfragen</a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">
+          <span class="menu-btn__lines" aria-hidden="true"></span>
+          <span class="visually-hidden" id="menuLabel">Menü öffnen</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Brotkrumen" data-reveal><a href="index.html">Start</a> / <span aria-current="page">Kontakt</span></nav>
+        <h1 class="title-xl split" data-split>Lass uns <em>reden.</em></h1>
+        <p class="lead" data-reveal style="--d:.3s">Du hast eine Idee, eine Frage oder bist dir noch unsicher, was du brauchst? Schreib mir – ganz unverbindlich.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:16px" aria-label="Kontaktmöglichkeiten">
+      <div class="wrap contact-grid">
+        <div data-reveal>
+          <div class="contact-cards" id="contactCards"></div>
+          <div class="response">
+            <span class="response__dot" aria-hidden="true"></span>
+            <p style="margin:0"><strong>Ich antworte innert 48 Stunden.</strong><br><span class="muted">Meistens sogar schneller.</span></p>
+          </div>
+          <p class="hand" style="margin-top:28px">Ich freue mich auf deine Nachricht!</p>
+        </div>
+
+        <div class="form-card" data-reveal style="--d:.15s">
+          <form class="form" id="contactForm" novalidate>
+            <h2 class="title-m">Nachricht schreiben</h2>
+            <div class="form-row">
+              <div class="field">
+                <label for="cName">Name *</label>
+                <input id="cName" name="name" type="text" autocomplete="name" required aria-describedby="cNameErr">
+                <p class="field__error" id="cNameErr"></p>
+              </div>
+              <div class="field">
+                <label for="cEmail">E-Mail *</label>
+                <input id="cEmail" name="email" type="email" autocomplete="email" required aria-describedby="cEmailErr">
+                <p class="field__error" id="cEmailErr"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="cMessage">Nachricht *</label>
+              <textarea id="cMessage" name="nachricht" rows="6" required aria-describedby="cMessageErr" placeholder="Erzähl mir kurz von dir und deinem Projekt."></textarea>
+              <p class="field__error" id="cMessageErr"></p>
+            </div>
+            <input class="visually-hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn--block" type="submit" id="contactBtn"><span>Nachricht senden</span> <span class="btn__icon"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <p class="form-status" id="contactStatus" role="alert"></p>
+          </form>
+          <div class="success" id="contactSuccess" hidden tabindex="-1">
+            <div class="success__icon"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><path d="M9 18.5l6 6 12-13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h2>Nachricht ist da!</h2>
+            <p>Danke für deine Nachricht. Ich melde mich so schnell wie möglich bei dir.</p>
+            <p class="demo-hint" id="contactDemo" hidden>Demo-Modus: Es wurde keine E-Mail gesendet, weil die Formspree-ID in script.js noch fehlt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Zur Startseite">
+            <span class="brand__mark" aria-hidden="true">B</span>
+            <span class="brand__name">Bleron Mustafa</span>
+          </a>
+          <p style="margin-top:16px">Persönliche Webseiten für kleine Firmen, Vereine und Selbstständige in der Schweiz.</p>
+        </div>
+        <div>
+          <h3>Seiten</h3>
+          <ul>
+            <li><a href="ueber-mich.html">Über mich</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
+            <li><a href="angebot.html">Angebot &amp; Preise</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul id="footerContact"></ul>
+        </div>
+        <div>
+          <h3>Rechtliches</h3>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Bleron Mustafa · Von Hand gestaltet &amp; programmiert in der Schweiz</p>
+        <a href="#main">Nach oben ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <noscript><p class="noscript">Bitte aktiviere JavaScript, damit Konfigurator, Warenkorb und Formulare funktionieren.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bestellung – Bleron Mustafa</title>
+  <meta name="description" content="Deine Bestellung bei Bleron Mustafa abschliessen.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Schrift: Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html" aria-label="Bleron Mustafa – zur Startseite">
+        <span class="brand__mark" aria-hidden="true">B</span>
+        <span class="brand__name">Bleron Mustafa <small>Webdesign · Schweiz</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a href="index.html">Start <small>Willkommen</small></a></li>
+          <li><a href="ueber-mich.html">Über mich <small>Wer ich bin</small></a></li>
+          <li><a href="projekte.html">Projekte <small>Referenzen</small></a></li>
+          <li><a href="angebot.html" aria-current="page">Angebot &amp; Preise <small>Seite bestellen</small></a></li>
+          <li><a href="kontakt.html">Kontakt <small>Schreib mir</small></a></li>
+        </ul>
+        <p class="nav__foot"><span data-config="email"></span><br>Antwort innert 48 Stunden</p>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="cartBtn" type="button" aria-haspopup="dialog">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a1 1 0 0 1-1 .9H7.2a1 1 0 0 1-1-.9L5 8Zm4 0V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="visually-hidden">Warenkorb öffnen, </span>
+          <span class="cart-count is-empty" id="cartCount">0</span>
+          <span class="visually-hidden"> Pakete</span>
+        </button>
+        <a class="btn btn--plain header-cta" href="angebot.html">Seite anfragen</a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">
+          <span class="menu-btn__lines" aria-hidden="true"></span>
+          <span class="visually-hidden" id="menuLabel">Menü öffnen</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" style="padding-bottom:24px">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Brotkrumen"><a href="index.html">Start</a> / <a href="angebot.html">Angebot</a> / <span aria-current="page">Bestellung</span></nav>
+        <h1 class="title-l split" data-split style="margin:6px 0 28px">Fast <em>geschafft.</em></h1>
+        <ol class="progress" id="progress" aria-label="Fortschritt">
+          <li class="is-done">Zusammenstellen</li>
+          <li class="is-active" aria-current="step">Deine Angaben</li>
+          <li>Fertig</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" aria-label="Bestellung">
+      <div class="wrap">
+        <!-- Leerer Warenkorb -->
+        <div class="cart-empty" id="checkoutEmpty" hidden>
+          <p class="hand">Hier ist noch nichts drin.</p>
+          <p>Stell zuerst dein Paket zusammen – danach kannst du hier bestellen.</p>
+          <a class="btn" href="angebot.html">Zum Konfigurator <span class="btn__icon"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+
+        <!-- Formular + Übersicht -->
+        <div class="checkout" id="checkout" hidden>
+          <div class="form-card" data-reveal>
+            <h2 class="title-m" style="margin-bottom:8px">Wie erreiche ich dich?</h2>
+            <p class="form-note" style="margin-bottom:24px">Felder mit * sind Pflicht. Ich melde mich innert 48 Stunden bei dir.</p>
+            <form class="form" id="orderForm" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="oName">Name *</label>
+                  <input id="oName" name="name" type="text" autocomplete="name" required aria-describedby="oNameErr">
+                  <p class="field__error" id="oNameErr"></p>
+                </div>
+                <div class="field">
+                  <label for="oCompany">Firma / Verein <span class="field__opt">(optional)</span></label>
+                  <input id="oCompany" name="firma" type="text" autocomplete="organization">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="oEmail">E-Mail *</label>
+                  <input id="oEmail" name="email" type="email" autocomplete="email" required aria-describedby="oEmailErr">
+                  <p class="field__error" id="oEmailErr"></p>
+                </div>
+                <div class="field">
+                  <label for="oPhone">Telefon <span class="field__opt">(optional)</span></label>
+                  <input id="oPhone" name="telefon" type="tel" autocomplete="tel" aria-describedby="oPhoneErr">
+                  <p class="field__error" id="oPhoneErr"></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="oMessage">Nachricht / Wünsche <span class="field__opt">(optional)</span></label>
+                <textarea id="oMessage" name="nachricht" rows="5" placeholder="Was machst du? Hast du schon Farben, Texte oder Beispiele, die dir gefallen?"></textarea>
+              </div>
+              <input class="visually-hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p class="form-note">Mit dem Absenden bestellst du unverbindlich. Es entstehen noch keine Kosten – den genauen Preis besprechen wir zusammen. Mehr dazu im <a href="datenschutz.html">Datenschutz</a>.</p>
+              <button class="btn btn--block" type="submit" id="orderBtn"><span>Bestellung absenden</span> <span class="btn__icon"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+              <p class="form-status" id="orderStatus" role="alert"></p>
+            </form>
+          </div>
+
+          <aside aria-labelledby="orderSumTitle" data-reveal style="--d:.15s">
+            <div class="receipt">
+              <div class="receipt__head">
+                <h2 id="orderSumTitle">Übersicht</h2>
+                <a class="link-btn" href="angebot.html">+ Paket hinzufügen</a>
+              </div>
+              <ul class="checkout-items" id="checkoutItems"></ul>
+              <div class="receipt__total"><span>Total</span><strong id="checkoutTotal"></strong></div>
+              <p class="receipt__note" data-config="priceNote"></p>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Danke -->
+        <div class="success" id="orderSuccess" hidden tabindex="-1">
+          <div class="success__icon"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><path d="M9 18.5l6 6 12-13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h2>Vielen Dank!</h2>
+          <p data-config="thanksText"></p>
+          <p class="demo-hint" id="orderDemo" hidden>Demo-Modus: Es wurde keine E-Mail gesendet, weil die Formspree-ID in script.js noch fehlt.</p>
+          <a class="btn" href="index.html">Zur Startseite <span class="btn__icon"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Zur Startseite">
+            <span class="brand__mark" aria-hidden="true">B</span>
+            <span class="brand__name">Bleron Mustafa</span>
+          </a>
+          <p style="margin-top:16px">Persönliche Webseiten für kleine Firmen, Vereine und Selbstständige in der Schweiz.</p>
+        </div>
+        <div>
+          <h3>Seiten</h3>
+          <ul>
+            <li><a href="ueber-mich.html">Über mich</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
+            <li><a href="angebot.html">Angebot &amp; Preise</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul id="footerContact"></ul>
+        </div>
+        <div>
+          <h3>Rechtliches</h3>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Bleron Mustafa · Von Hand gestaltet &amp; programmiert in der Schweiz</p>
+        <a href="#main">Nach oben ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <noscript><p class="noscript">Bitte aktiviere JavaScript, damit Konfigurator, Warenkorb und Formulare funktionieren.</p></noscript>
+</body>
+</html>
