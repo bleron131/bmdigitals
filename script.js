@@ -45,13 +45,8 @@ const CONFIG = {
     { time: "Heute", title: "Offen für deine Seite", text: "Ich nehme ausgewählte Projekte an und baue Webseiten für kleine Firmen und Vereine." },
   ],
 
-  // Ablauf (Startseite)
-  steps: [
-    { title: "Zusammenstellen", text: "Du wählst online dein Paket – ganz unverbindlich." },
-    { title: "Kennenlernen", text: "Ich melde mich, wir besprechen Wünsche, Inhalte und Termin." },
-    { title: "Gestalten & bauen", text: "Du siehst Entwürfe und gibst Feedback, bis alles passt." },
-    { title: "Online gehen", text: "Ich stelle die Seite online und zeige dir, wie alles funktioniert." },
-  ],
+  // Beispiel-Auswahl für die Konfigurator-Vorschau auf der Startseite
+  example: { title: "Beispiel: Verein", type: "coded", extras: { page: 2, form: 1 } },
 
   // Versprechen (Startseite). icon: price | talk | update | pay
   promises: [
@@ -65,7 +60,7 @@ const CONFIG = {
   projects: [
     { title: "Projekt 1", tag: "One-Pager", year: "2026", text: "Kurze Beschreibung: Für wen war das Projekt, was war das Ziel und was hast du umgesetzt?", services: ["Konzept", "Design", "HTML & CSS"], link: "#", image: "", color: "#3a2d97" },
     { title: "Projekt 2", tag: "Webseite", year: "2026", text: "Kurze Beschreibung: Für wen war das Projekt, was war das Ziel und was hast du umgesetzt?", services: ["WordPress", "Texte", "Bilder"], link: "#", image: "", color: "#adadc2" },
-    { title: "Projekt 3", tag: "Shop", year: "2026", text: "Kurze Beschreibung: Für wen war das Projekt, was war das Ziel und was hast du umgesetzt?", services: ["Produktfotos", "Logo", "Social Media"], link: "#", image: "", color: "#d8e1e6" },
+    { title: "Projekt 3", tag: "Shop", year: "2026", text: "Kurze Beschreibung: Für wen war das Projekt, was war das Ziel und was hast du umgesetzt?", services: ["Produktfotos", "Logo", "Social Media"], link: "#", image: "", color: "#d3d7dd" },
   ],
 
   contact: [
@@ -193,7 +188,7 @@ function renderCommon() {
 // Gezeichneter Platzhalter, solange kein Projektbild da ist
 function projectMedia(p) {
   if (p.image) return `<img src="${esc(p.image)}" alt="" loading="lazy" width="800" height="600">`;
-  return `<div class="mock" style="--mock-c:${esc(p.color)};background:radial-gradient(90% 80% at 50% 100%, color-mix(in srgb, ${esc(p.color)} 55%, #000), #05050a 75%)" aria-hidden="true">
+  return `<div class="mock" style="--mock-c:${esc(p.color)}" aria-hidden="true">
     <div class="mock__win"><div class="mock__dots"><i></i><i></i><i></i></div>
       <div class="mock__hero"><div class="mock__lines"><span></span><span></span><span></span><span></span></div><div class="mock__img"></div></div>
     </div></div>`;
@@ -222,14 +217,15 @@ function renderHome() {
       </a>`).join("");
   }
 
-  const process = $("#process");
-  if (process) {
-    process.insertAdjacentHTML("beforeend", CONFIG.steps.map((s, i) => `
-      <li class="step" data-reveal style="--d:${i * 0.1}s">
-        <span class="step__no">Schritt ${String(i + 1).padStart(2, "0")}</span>
-        <h3>${esc(s.title)}</h3>
-        <p>${esc(s.text)}</p>
-      </li>`).join(""));
+  // Vorschau: Beispiel-Auswahl, gerechnet mit den echten Preisen
+  const preview = $("#examplePreview");
+  if (preview) {
+    const ex = CONFIG.example;
+    preview.innerHTML = `
+      <div class="receipt__head"><h3>${esc(ex.title)}</h3><span class="hand">${esc(typeById(ex.type).label)}</span></div>
+      <ul class="receipt__list">${itemLines(ex).map((l) => `<li><span>${esc(l.label)}</span><span>${chf(l.price)}</span></li>`).join("")}</ul>
+      <div class="receipt__total"><span>Total</span><strong>${fromChf(itemTotal(ex))}</strong></div>
+      <p class="receipt__note">${esc(CONFIG.texts.priceNote)}</p>`;
   }
 
   const promises = $("#promises");
@@ -279,11 +275,10 @@ function initProjects() {
     <article class="case" id="projekt-${i + 1}" data-tag="${esc(p.tag)}">
       <div class="case__media" data-curtain>${projectMedia(p)}</div>
       <div data-reveal style="--d:.15s">
-        <span class="case__no" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
+        <span class="case__tag">${esc(p.tag)} · ${esc(p.year)}</span>
         <h2>${esc(p.title)}</h2>
         <p class="case__text">${esc(p.text)}</p>
         <ul class="case__info" aria-label="Leistungen">
-          <li class="chip">${esc(p.tag)}</li><li class="chip">${esc(p.year)}</li>
           ${p.services.map((s) => `<li class="chip">${esc(s)}</li>`).join("")}
         </ul>
         <a class="text-link" href="${esc(p.link)}"${isExternal(p.link)}>Projekt ansehen <span aria-hidden="true">→</span><span class="visually-hidden">: ${esc(p.title)}</span></a>
@@ -817,20 +812,6 @@ function initAnimations() {
       scene.style.setProperty("--my", ((ev.clientY - r.top) / r.height - 0.5).toFixed(3));
     });
     scene.addEventListener("pointerleave", () => { scene.style.setProperty("--mx", 0); scene.style.setProperty("--my", 0); });
-  }
-
-  // Ablauf-Linie wächst mit dem Scrollen
-  const process = $("#process");
-  if (process) {
-    const steps = $$(".step", process);
-    const onScroll = () => {
-      const r = process.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, (innerHeight * 0.75 - r.top) / r.height));
-      process.style.setProperty("--p", p.toFixed(3));
-      steps.forEach((s, i) => s.classList.toggle("is-done", p >= (i + 0.2) / steps.length));
-    };
-    addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
   }
 }
 

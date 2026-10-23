@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bleron Mustafa – Persönliche Webseiten aus der Schweiz</title>
   <meta name="description" content="Bleron Mustafa, Mediamatiker EFZ in Ausbildung: persönliche, schnelle Webseiten für kleine Firmen, Vereine und Selbstständige in der Schweiz. Faire Richtpreise in CHF.">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#f5f5f6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
 
   <!-- Schrift: Be Vietnam Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +25,6 @@
   <header class="site-header">
     <div class="wrap header-row">
       <a class="brand" href="index.html" aria-label="Bleron Mustafa – zur Startseite">
-        <span class="brand__mark" aria-hidden="true">B</span>
         <span class="brand__name">Bleron Mustafa <small>Webdesign · Schweiz</small></span>
       </a>
 
@@ -59,44 +60,33 @@
     <section class="hero" aria-labelledby="heroTitle">
       <div class="hero__frame" id="heroScene">
       <div class="scene" aria-hidden="true">
-        <svg width="0" height="0" style="position:absolute">
-          <defs>
-            <linearGradient id="gV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8e1e6"/><stop offset="1" stop-color="#3a2d97"/></linearGradient>
-            <linearGradient id="gV2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a3cb8"/><stop offset="1" stop-color="#0a0820"/></linearGradient>
-            <linearGradient id="gDark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2070"/><stop offset="1" stop-color="#030208"/></linearGradient>
-            <linearGradient id="gSide" x1="0" x2="1"><stop offset="0" stop-color="#07061a"/><stop offset=".6" stop-color="#4a3cb8"/><stop offset="1" stop-color="#1a1450"/></linearGradient>
-            <radialGradient id="gPlanet" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#f5f5f6"/><stop offset=".38" stop-color="#4a3cb8"/><stop offset="1" stop-color="#05041a"/></radialGradient>
-            <linearGradient id="gRibbon" x1="0" x2="1"><stop offset="0" stop-color="#3a2d97" stop-opacity="0"/><stop offset=".55" stop-color="#adadc2"/><stop offset="1" stop-color="#3a2d97" stop-opacity=".25"/></linearGradient>
-          </defs>
-        </svg>
-        <div class="scene__glow"></div>
         <div class="scene__arch"><span></span><span></span><span></span><span></span></div>
         <div class="scene__floor"></div>
         <div class="scene__horizon"></div>
 
         <!-- Planet -->
-        <div class="obj obj--planet"><svg viewBox="0 0 120 100"><path d="M6 50a54 13 0 0 1 108 0" transform="rotate(-16 60 50)" fill="none" stroke="#adadc2" stroke-width="2.5" opacity=".6"/><circle cx="60" cy="50" r="30" fill="url(#gPlanet)"/><path d="M6 50a54 13 0 0 0 108 0" transform="rotate(-16 60 50)" fill="none" stroke="#f5f5f6" stroke-width="2.5"/></svg></div>
+        <div class="obj obj--planet"><svg viewBox="0 0 120 100"><path class="s-soft" d="M6 50a54 13 0 0 1 108 0" transform="rotate(-16 60 50)" fill="none" stroke-width="2.5"/><circle class="f-left" cx="60" cy="50" r="30"/><path class="f-right" d="M90 50a30 30 0 0 1-48 24 34 34 0 0 0 40-38 30 30 0 0 1 8 14z"/><circle class="f-top" cx="50" cy="38" r="6" opacity=".55"/><path class="s-line" d="M6 50a54 13 0 0 0 108 0" transform="rotate(-16 60 50)" fill="none" stroke-width="2.5"/></svg></div>
         <!-- Würfel -->
-        <div class="obj obj--cube"><svg viewBox="0 0 100 110"><path d="M50 8 92 30 50 52 8 30z" fill="#d3d7dd"/><path d="M8 30 50 52v50L8 80z" fill="url(#gV2)"/><path d="M92 30 50 52v50l42-22z" fill="url(#gDark)"/><path d="M50 8 92 30 50 52 8 30zM50 52v50" fill="none" stroke="#f5f5f6" stroke-opacity=".5"/></svg></div>
+        <div class="obj obj--cube"><svg viewBox="0 0 100 110"><path class="f-top" d="M50 8 92 30 50 52 8 30z"/><path class="f-left" d="M8 30 50 52v50L8 80z"/><path class="f-right" d="M92 30 50 52v50l42-22z"/></svg></div>
         <!-- Browserfenster -->
-        <div class="obj obj--window"><svg viewBox="0 0 160 124"><g transform="skewY(-8) translate(0 22)"><rect x="1" y="1" width="158" height="96" rx="8" fill="#05041a" fill-opacity=".9" stroke="#adadc2" stroke-opacity=".7"/><path d="M1 18h158" stroke="#adadc2" stroke-opacity=".4"/><circle cx="12" cy="10" r="3" fill="#ff8fa3"/><circle cx="22" cy="10" r="3" fill="#adadc2"/><circle cx="32" cy="10" r="3" fill="#6ee7b7"/><rect x="14" y="32" width="70" height="8" rx="3" fill="#f5f5f6"/><rect x="14" y="46" width="52" height="5" rx="2" fill="#adadc2" opacity=".5"/><rect x="14" y="56" width="40" height="5" rx="2" fill="#adadc2" opacity=".5"/><rect x="14" y="70" width="34" height="12" rx="6" fill="#3a2d97"/><circle cx="122" cy="56" r="22" fill="url(#gPlanet)"/></g></svg></div>
+        <div class="obj obj--window"><svg viewBox="0 0 160 124"><g transform="skewY(-8) translate(0 22)"><rect class="f-win s-line" x="1" y="1" width="158" height="96" rx="8"/><path class="s-line" d="M1 18h158" opacity=".4"/><circle class="f-pink" cx="12" cy="10" r="3"/><circle class="f-soft" cx="22" cy="10" r="3"/><circle class="f-ok" cx="32" cy="10" r="3"/><rect class="f-left" x="14" y="32" width="70" height="8" rx="3"/><rect class="f-soft" x="14" y="46" width="52" height="5" rx="2"/><rect class="f-soft" x="14" y="56" width="40" height="5" rx="2"/><rect class="f-left" x="14" y="70" width="34" height="12" rx="6"/><circle class="f-left" cx="122" cy="56" r="22"/></g></svg></div>
         <!-- Monolith / Server -->
-        <div class="obj obj--monolith"><svg viewBox="0 0 70 200"><path d="M10 20 40 8 64 18 34 30z" fill="#d3d7dd"/><path d="M10 20 34 30v160L10 178z" fill="url(#gV2)"/><path d="M34 30 64 18v160l-30 12z" fill="url(#gDark)"/><path d="M38 52l22-9M38 64l22-9M38 76l22-9M38 88l22-9" stroke="#d8e1e6" stroke-opacity=".45"/><circle cx="56" cy="112" r="2.2" fill="#6ee7b7"/><circle cx="48" cy="116" r="2.2" fill="#adadc2"/></svg></div>
+        <div class="obj obj--monolith"><svg viewBox="0 0 70 200"><path class="f-top" d="M10 20 40 8 64 18 34 30z"/><path class="f-left" d="M10 20 34 30v160L10 178z"/><path class="f-right" d="M34 30 64 18v160l-30 12z"/><path class="s-soft" d="M38 52l22-9M38 64l22-9M38 76l22-9M38 88l22-9" opacity=".7"/><circle class="f-ok" cx="56" cy="112" r="2.2"/><circle class="f-soft" cx="48" cy="116" r="2.2"/></svg></div>
         <!-- Säulen -->
-        <div class="obj obj--pillars"><svg viewBox="0 0 160 175"><path d="M50 120h10M106 145h8" stroke="#d8e1e6" stroke-width="2"/><path d="M10 40v120a20 6 0 0 0 40 0V40z" fill="url(#gSide)"/><ellipse cx="30" cy="40" rx="20" ry="6" fill="#d3d7dd"/><path d="M60 10v155a23 7 0 0 0 46 0V10z" fill="url(#gSide)"/><ellipse cx="83" cy="10" rx="23" ry="7" fill="#f5f5f6"/><path d="M92 24v130" stroke="#f5f5f6" stroke-opacity=".35" stroke-width="2"/><path d="M114 80v82a18 5 0 0 0 36 0V80z" fill="url(#gSide)"/><ellipse cx="132" cy="80" rx="18" ry="5" fill="#adadc2"/></svg></div>
+        <div class="obj obj--pillars"><svg viewBox="0 0 160 175"><path class="s-soft" d="M50 120h10M106 145h8" stroke-width="2"/><path class="f-left" d="M10 40v120a20 6 0 0 0 40 0V40z"/><path class="f-right" d="M34 40h16v120a20 6 0 0 1-16 5.5z"/><ellipse class="f-top" cx="30" cy="40" rx="20" ry="6"/><path class="f-left" d="M60 10v155a23 7 0 0 0 46 0V10z"/><path class="f-right" d="M88 10h18v155a23 7 0 0 1-18 6.5z"/><ellipse class="f-top" cx="83" cy="10" rx="23" ry="7"/><path class="f-left" d="M114 80v82a18 5 0 0 0 36 0V80z"/><path class="f-right" d="M136 80h14v82a18 5 0 0 1-14 4.5z"/><ellipse class="f-top" cx="132" cy="80" rx="18" ry="5"/></svg></div>
         <!-- Bänder -->
-        <div class="obj obj--ribbon-l"><svg viewBox="0 0 260 90"><path d="M0 60C60 20 120 80 180 40S250 10 260 20v10c-20-6-60 30-80 26C120 96 60 36 0 76z" fill="url(#gRibbon)"/></svg></div>
-        <div class="obj obj--ribbon-r"><svg viewBox="0 0 260 90"><path transform="scale(-1 1) translate(-260 0)" d="M0 60C60 20 120 80 180 40S250 10 260 20v10c-20-6-60 30-80 26C120 96 60 36 0 76z" fill="url(#gRibbon)"/></svg></div>
+        <div class="obj obj--ribbon-l"><svg viewBox="0 0 260 90"><path class="f-soft" opacity=".55" d="M0 60C60 20 120 80 180 40S250 10 260 20v10c-20-6-60 30-80 26C120 96 60 36 0 76z"/></svg></div>
+        <div class="obj obj--ribbon-r"><svg viewBox="0 0 260 90"><path class="f-soft" opacity=".55" transform="scale(-1 1) translate(-260 0)" d="M0 60C60 20 120 80 180 40S250 10 260 20v10c-20-6-60 30-80 26C120 96 60 36 0 76z"/></svg></div>
         <!-- Mauszeiger -->
-        <div class="obj obj--cursor"><svg viewBox="0 0 40 46"><path d="M4 3l30 16-13 3.5L14 38z" fill="url(#gV)" stroke="#f5f5f6" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <div class="obj obj--cursor"><svg viewBox="0 0 40 46"><path class="f-left s-line" d="M4 3l30 16-13 3.5L14 38z" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
         <!-- Kugel -->
-        <div class="obj obj--sphere"><svg viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="url(#gPlanet)"/></svg></div>
+        <div class="obj obj--sphere"><svg viewBox="0 0 26 26"><circle class="f-left" cx="13" cy="13" r="12"/><circle class="f-top" cx="9" cy="9" r="3" opacity=".6"/></svg></div>
         <!-- Platte -->
-        <div class="obj obj--slab"><svg viewBox="0 0 120 50"><path d="M10 20 60 4l50 16-50 16z" fill="#3a2d97" fill-opacity=".85"/><path d="M10 20v8l50 16v-8z" fill="url(#gV2)"/><path d="M110 20v8L60 44v-8z" fill="url(#gDark)"/></svg></div>
+        <div class="obj obj--slab"><svg viewBox="0 0 120 50"><path class="f-top" d="M10 20 60 4l50 16-50 16z"/><path class="f-left" d="M10 20v8l50 16v-8z"/><path class="f-right" d="M110 20v8L60 44v-8z"/></svg></div>
         <!-- Code-Symbol -->
-        <div class="obj obj--code"><svg viewBox="0 0 64 64"><rect x="4" y="4" width="56" height="56" rx="14" fill="#05041a" fill-opacity=".85" stroke="#adadc2" stroke-opacity=".6"/><path d="M24 22l-9 10 9 10M40 22l9 10-9 10M35 18l-6 28" fill="none" stroke="#d8e1e6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="obj obj--code"><svg viewBox="0 0 64 64"><rect class="f-win s-line" x="4" y="4" width="56" height="56" rx="14"/><path class="s-line" d="M24 22l-9 10 9 10M40 22l9 10-9 10M35 18l-6 28" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <!-- Punkte -->
-        <div class="obj obj--dots"><svg viewBox="0 0 90 32"><g fill="#adadc2" opacity=".55"><circle cx="5" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="31" cy="5" r="2"/><circle cx="44" cy="5" r="2"/><circle cx="57" cy="5" r="2"/><circle cx="70" cy="5" r="2"/><circle cx="83" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="31" cy="18" r="2"/><circle cx="44" cy="18" r="2"/><circle cx="57" cy="18" r="2"/><circle cx="70" cy="18" r="2"/><circle cx="83" cy="18" r="2"/><circle cx="5" cy="31" r="2"/><circle cx="18" cy="31" r="2"/><circle cx="31" cy="31" r="2"/><circle cx="44" cy="31" r="2"/><circle cx="57" cy="31" r="2"/><circle cx="70" cy="31" r="2"/><circle cx="83" cy="31" r="2"/></g></svg></div>
+        <div class="obj obj--dots"><svg viewBox="0 0 90 32"><g class="f-soft"><circle cx="5" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="31" cy="5" r="2"/><circle cx="44" cy="5" r="2"/><circle cx="57" cy="5" r="2"/><circle cx="70" cy="5" r="2"/><circle cx="83" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="31" cy="18" r="2"/><circle cx="44" cy="18" r="2"/><circle cx="57" cy="18" r="2"/><circle cx="70" cy="18" r="2"/><circle cx="83" cy="18" r="2"/><circle cx="5" cy="31" r="2"/><circle cx="18" cy="31" r="2"/><circle cx="31" cy="31" r="2"/><circle cx="44" cy="31" r="2"/><circle cx="57" cy="31" r="2"/><circle cx="70" cy="31" r="2"/><circle cx="83" cy="31" r="2"/></g></svg></div>
       </div>
         <div class="hero__content">
           <p class="kicker" data-reveal>Mediamatiker EFZ · Webdesign aus der Schweiz</p>
@@ -134,19 +124,16 @@
         </div>
         <div class="services">
           <a class="service" href="angebot.html?typ=coded" data-reveal>
-            <span class="service__no">01</span>
             <h3 class="service__title">Handgemachte Webseite</h3>
             <p class="service__text">Von Grund auf programmiert. Schlank, schnell und genau so, wie du sie dir vorstellst.</p>
             <span class="service__price"><span data-price="base.coded"></span><span class="service__arrow"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
           </a>
           <a class="service" href="angebot.html?typ=cms" data-reveal>
-            <span class="service__no">02</span>
             <h3 class="service__title">WordPress oder Wix</h3>
             <p class="service__text">Du möchtest Texte und Bilder später selbst ändern? Dann richte ich dir einen Baukasten ein und zeige dir alles.</p>
             <span class="service__price"><span data-price="base.cms"></span><span class="service__arrow"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
           </a>
           <a class="service" href="angebot.html" data-reveal>
-            <span class="service__no">03</span>
             <h3 class="service__title">Gestaltung &amp; Medien</h3>
             <p class="service__text">Logo, Grafiken oder ein kurzes Video für Social Media – passend zu deiner Seite, aus einer Hand.</p>
             <span class="service__price"><span data-price="extra.logo"></span><span class="service__arrow"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
@@ -169,17 +156,19 @@
       </div>
     </section>
 
-    <!-- Ablauf -->
-    <section class="section" aria-labelledby="processTitle">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="kicker" data-reveal>So arbeiten wir zusammen</p>
-            <h2 class="title-l" id="processTitle" data-reveal style="--d:.1s">Vier Schritte, <em>keine Überraschungen</em></h2>
-          </div>
-          <p class="lead" data-reveal style="--d:.2s">Du weisst immer, wo dein Projekt steht und was als Nächstes passiert.</p>
+    <!-- Konfigurator-Vorschau -->
+    <section class="section" aria-labelledby="previewTitle">
+      <div class="wrap preview-grid">
+        <div>
+          <p class="kicker" data-reveal>Konfigurator</p>
+          <h2 class="title-l" id="previewTitle" data-reveal style="--d:.1s">Dein Preis, <em>bevor</em> du anfragst</h2>
+          <p class="lead" data-reveal style="--d:.2s">Du wählst die Umsetzung und die Extras – und siehst sofort, womit du rechnen kannst. So sieht das zum Beispiel für die Webseite eines Vereins aus:</p>
+          <p data-reveal style="--d:.3s"><a class="btn" href="angebot.html">Selbst ausprobieren <span class="btn__icon"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></p>
         </div>
-        <ol class="process" id="process"><li class="process__line" aria-hidden="true"></li></ol>
+        <figure class="preview" data-reveal="scale" style="margin:0">
+          <div class="receipt" id="examplePreview"></div>
+          <figcaption class="preview__caption">Echte Ansicht aus dem Konfigurator</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -214,8 +203,7 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html" aria-label="Zur Startseite">
-            <span class="brand__mark" aria-hidden="true">B</span>
-            <span class="brand__name">Bleron Mustafa</span>
+            <span class="brand__name">Bleron Mustafa <small>Webdesign · Schweiz</small></span>
           </a>
           <p style="margin-top:16px">Persönliche Webseiten für kleine Firmen, Vereine und Selbstständige in der Schweiz.</p>
         </div>
